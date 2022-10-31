@@ -3,13 +3,13 @@ class CrazyGPs {
     this.name = "";
     this.score = 0;
     this.questions = [
-        { question: "Who won the 2008 Singapore GP?",
+        { questionEasy: "Who won the 2008 Singapore GP?",
         answers: ["Felipe Massa", "Lewis Hamilton", "Kimi Räikkönen", "Robert Kubica", "Fernando Alonso"],
         correctAnswer: "Fernando Alonso",},
-        { question: "Who won the 2012 Spain GP?",
+        { questionEasy: "Who won the 2012 Spain GP?",
         answers: ["Pastor Maldonado", "Lewis Hamilton", "Kimi Räikkönen", "Romain Grosjean", "Fernando Alonso"],
         correctAnswer: "Pastor Maldonado",},
-        { question: "Who won the 2017 Azerbaijan GP?",
+        { questionEasy: "Who won the 2017 Azerbaijan GP?",
         answers: ["Max Verstappen", "Lewis Hamilton", "Lance Stroll", "Daniel Ricciardo", "Esteban Ocon"],
         correctAnswer: "Daniel Ricciardo",},
  ];
@@ -23,13 +23,21 @@ class CrazyGPs {
         introPage.classList.add("hide");
 
         gameBoard.classList.remove("hide");
-
-
-        console.log("click");
     }
 
     showQuestion () {
-        //renderizar questão 1 e respostas da 1 no html
+        let question1 = document.querySelector(".question1");
+        let answer1 = document.querySelector(".answer1");
+        let answer2 = document.querySelector(".answer2");
+        let answer3 = document.querySelector(".answer3");
+        let answer4 = document.querySelector(".answer4");
+        let answer5 = document.querySelector(".answer5");
+        question1.innerText  = this.questions[0].questionEasy
+        answer1.innerText = this.questions[0].answers[0];
+        answer2.innerText = this.questions[0].answers[1];
+        answer3.innerText = this.questions[0].answers[2];
+        answer4.innerText = this.questions[0].answers[3];
+        answer5.innerText = this.questions[0].answers[4];
     }
 
     checkAnswer () {
