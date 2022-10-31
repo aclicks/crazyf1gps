@@ -1,0 +1,37 @@
+.heroTitle {
+    display: flex;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 6.5rem;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+.fullpage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 80vh;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.background{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    
+}
+
+.inputName {
+    display: flex;
+    font-size: 2.5rem;
+    margin: 1rem;
+}
+
+.playBtn {
+    display: flex;
+    font-size: 2.5rem;
+    margin: 1rem;
+}
