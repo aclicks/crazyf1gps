@@ -15,6 +15,7 @@
     height: 80vh;
     flex-wrap: wrap;
     flex-direction: column;
+    padding: 2rem;
 }
 
 .background{
