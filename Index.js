@@ -43,7 +43,6 @@ class CrazyGPs {
         }
         else {
             this.score -= 10;
-            console.log(this.score);
             let remain = document.querySelector(".score")
             remain.innerText = this.score+" points left";
             this.checkStatus()
@@ -52,11 +51,12 @@ class CrazyGPs {
 
     checkStatus () {
         if (this.score === 0){
-            console.log("perdeu");
+            let remain = document.querySelector(".score")
+            remain.innerText = this.score+" points left";
             this.endGame();
         }
         else {
-            if (this.round < 3) {
+            if (this.round < 2) {
                 this.nextQuestion();
             }
             else {this.endGame()}
@@ -75,12 +75,16 @@ class CrazyGPs {
         const button = document.querySelectorAll(".answer");
         button.forEach ((e1, i) => {
             e1.innerText = this.questions[this.round].answers[i];
-            e1.addEventListener("click", e => {this.checkAnswer(e1.innerText)});
         })
     }
 
     endGame () {
-        console.log("fim")
+        let gameBoard = document.querySelector("#gameBoard");
+        let resultPage = document.querySelector(".resultPage");
+
+        gameBoard.classList.add("hide");
+
+        resultPage.classList.remove("hide");
     }
 
 }

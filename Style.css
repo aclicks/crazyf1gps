@@ -99,3 +99,19 @@
 .bottomPage{
     display: flex;
 }
+
+.congrat {
+    display: flex;
+}
+
+.lose {
+    display: flex;
+}
+
+.result {
+    display: flex;
+}
+
+.playAgain {
+    display: flex;
+}
