@@ -20,10 +20,12 @@ class CrazyGPs {
     play () {
         let gameBoard = document.querySelector("#gameBoard");
         let introPage = document.querySelector(".introPage");
+        let resultPage = document.querySelector(".resultPage");
 
         introPage.classList.add("hide");
-
+        resultPage.classList.add("hide");
         gameBoard.classList.remove("hide");
+
     }
 
     showQuestion () {
@@ -83,8 +85,17 @@ class CrazyGPs {
         let resultPage = document.querySelector(".resultPage");
 
         gameBoard.classList.add("hide");
-
+        
         resultPage.classList.remove("hide");
+
+        if (this.score === 0){
+            let lose = document.querySelector("#lose")
+            lose.classList.remove("hide")
+        }
+        else{
+            let won = document.querySelector("#won")
+            won.classList.remove("hide")
+        }
     }
 
 }
