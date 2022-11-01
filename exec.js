@@ -8,6 +8,6 @@ startBtn.addEventListener("click", () => {
     game.showQuestion();
 });
 
-input.addEventListener('input', ( )=> {
+input.addEventListener('input', () => {
     game.name = input.value;
 });

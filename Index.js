@@ -15,8 +15,8 @@ class CrazyGPs {
  ];
     this.result = 0;
     this.round = 0;
-    this.page = 0;
     }
+
     play () {
         let gameBoard = document.querySelector("#gameBoard");
         let introPage = document.querySelector(".introPage");
@@ -27,34 +27,39 @@ class CrazyGPs {
     }
 
     showQuestion () {
-        let question = document.querySelector(".question1");
-        for(let i = 0; i < 6; i++){
-            if (i === 0){
-                question.innerText = this.questions[0].questionEasy;
-            }
-            else{
-                const button = document.createElement("button");
-                button.className = "answer";
-                button.innerText = this.questions[this.page].answers[i-1];
-                button.addEventListener("click", e => {this.checkAnswer(button.innerText);});
-                question.appendChild(button);
-            }
-        }
+        const question = document.querySelector(".question1");
+        question.innerText = this.questions[this.round].questionEasy;
+        const button = document.querySelectorAll(".answer");
+        button.forEach ((e1, i) => {
+            e1.innerText = this.questions[this.round].answers[i];
+            e1.addEventListener("click", e => {this.checkAnswer(e1.innerText)});
+        })
+       
     }
 
     checkAnswer (textToCheck) {
-        if (this.questions[this.page].correctAnswer === textToCheck) {
-            
+        if (this.questions[this.round].correctAnswer === textToCheck) {
+            this.checkStatus();
         }
         else {
-            
+            this.score -= 10;
+            console.log(this.score);
+            let remain = document.querySelector(".score")
+            remain.innerText = this.score+" points left";
+            this.checkStatus()
         }
-        this.checkStatus()
     }
 
     checkStatus () {
         if (this.score === 0){
-
+            console.log("perdeu");
+            this.endGame();
+        }
+        else {
+            if (this.round < 3) {
+                this.nextQuestion();
+            }
+            else {this.endGame()}
         }
     }
 
@@ -63,30 +68,19 @@ class CrazyGPs {
     }
 
     nextQuestion () {
-        this.page++;
-        let remove = document.querySelector(".question");
-        for (let i = 0; i < 5; i++ ){
-            remove.removeChild(button);
-        }
+        this.round += 1;
 
-        let question = document.querySelector(".question1");
-        for(let i = 0; i < 6; i++){
-            if (i === 0){
-                question.innerText = this.questions[0].questionEasy;
-            }
-            else{
-                const button = document.createElement("button");
-                button.className = "answer";
-                button.innerText = this.questions[this.page].answers[i-1];
-                button.addEventListener("click", function(){this.checkAnswer(button.innerText);});
-                question.appendChild(button);
-            }
-        }
-        if (this.page < 4) {this.nextQuestion()}
-        else {this.endGame()}
+        const question = document.querySelector(".question1");
+        question.innerText = this.questions[this.round].questionEasy;
+        const button = document.querySelectorAll(".answer");
+        button.forEach ((e1, i) => {
+            e1.innerText = this.questions[this.round].answers[i];
+            e1.addEventListener("click", e => {this.checkAnswer(e1.innerText)});
+        })
     }
-    endGame () {
 
+    endGame () {
+        console.log("fim")
     }
 
 }
