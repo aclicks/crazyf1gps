@@ -36,13 +36,20 @@ class CrazyGPs {
                 const button = document.createElement("button");
                 button.className = "answer";
                 button.innerText = this.questions[this.page].answers[i-1];
+                button.addEventListener("click", this.checkAnswer(button.innerText));
                 question.appendChild(button);
             }
         }
     }
 
-    checkAnswer () {
-        //comparar respostas
+    checkAnswer (textToCheck) {
+        if (this.questions[this.page].correctAnswer === textToCheck) {
+            console.log("acertou")
+            console.log(textToCheck)
+        }
+        else {
+            console.log(textToCheck)
+        }
     }
 
     checkStatus () {
