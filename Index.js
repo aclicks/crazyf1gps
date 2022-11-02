@@ -87,14 +87,17 @@ class CrazyGPs {
         gameBoard.classList.add("hide");
         
         resultPage.classList.remove("hide");
+        let bg = document.querySelector(".background");
 
         if (this.score === 0){
-            let lose = document.querySelector("#lose")
-            lose.classList.remove("hide")
+            let lose = document.querySelector("#lose");
+            lose.classList.remove("hide");
+            bg.style.backgroundImage = "url('Imgs/lose.jpg')";
         }
         else{
-            let won = document.querySelector("#won")
-            won.classList.remove("hide")
+            let won = document.querySelector("#won");
+            won.classList.remove("hide");
+            bg.style.backgroundImage = "url('Imgs/won.png')";
         }
     }
 

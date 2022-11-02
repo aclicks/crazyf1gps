@@ -1,11 +1,11 @@
-//*font-family: 'Anton', sans-serif;
+/*font-family: 'Anton', sans-serif;
 font-family: 'Permanent Marker', cursive;
-font-family: 'Russo One', sans-serif;*//
+font-family: 'Russo One', sans-serif;*/
 
 .heroTitle {
     display: flex;
     justify-content: center;
-    padding: 2rem;
+    padding: 0rem;
     text-align: center;
     width: 10%;
 }
@@ -55,7 +55,7 @@ font-family: 'Russo One', sans-serif;*//
     display: flex;
     justify-content: flex-end;
     width: 80vw;
-    height: 30vh;
+    height: 10vh;
     align-content: flex-end;
     flex-wrap: wrap;
     font-size: 1.5rem;
@@ -88,7 +88,7 @@ font-family: 'Russo One', sans-serif;*//
 
 .answer {
     padding: 1rem;
-    width: 38vw;
+    width: 35vw;
     margin: 1vw;
     font-size: 1.5rem;
 }
@@ -100,7 +100,7 @@ font-family: 'Russo One', sans-serif;*//
     justify-content: center;
     align-content: center;
     align-items: center;
-    width: 38vw;
+    width: 35vw;
 }
 
 .card {
@@ -128,9 +128,11 @@ font-family: 'Russo One', sans-serif;*//
 }
 
 #won {
+    display: flex;
     font-family: 'Permanent Marker', cursive;
     font-size: 4.5rem;
-    justify-content: center;
+    width: 50%;
+    justify-content: flex-end;
     padding: 2rem;
     text-align: center;
     color: white;
@@ -139,10 +141,12 @@ font-family: 'Russo One', sans-serif;*//
 #lose {
     font-family: 'Permanent Marker', cursive;
     font-size: 4.5rem;
+    font-style:
     justify-content: center;
     padding: 2rem;
     text-align: center;
     color: white;
+    padding-bottom: 20rem;
 }
 
 .result {
@@ -200,7 +204,7 @@ font-family: 'Russo One', sans-serif;*//
   .shake {
     cursor: pointer;
     height: 3em;
-    width: 20em;
+    width: 15em;
     border: none;
     border-radius: 10em;
     background: #a7a7a7;
@@ -253,7 +257,6 @@ font-family: 'Russo One', sans-serif;*//
     }
    
    .input {
-    align-self: start;
     border: 3px solid rgb(236, 43, 43);
     border-radius: 20px;
     background-image: linear-gradient(120deg,#3c3c3c,#585858);
