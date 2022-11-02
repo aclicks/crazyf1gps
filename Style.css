@@ -7,14 +7,14 @@ font-family: 'Russo One', sans-serif;*//
     justify-content: center;
     padding: 2rem;
     text-align: center;
-    width: 70%;
+    width: 10%;
 }
 
 .introPage {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 70%;
     height: 70%;
     flex-wrap: wrap;
     flex-direction: column;
@@ -28,7 +28,7 @@ font-family: 'Russo One', sans-serif;*//
     align-items: center;
     background-image: url("Imgs/fundo.png");
     background-position: center;
-    background-size: 50%;
+    background-size: 100%;
     background-color: black;
     background-repeat: no-repeat;
 }
@@ -61,6 +61,7 @@ font-family: 'Russo One', sans-serif;*//
     font-size: 1.5rem;
     padding: 1rem;
     color: white;
+    font-family: 'Russo One', sans-serif;
 }
 
 .middleQPage {
@@ -68,11 +69,14 @@ font-family: 'Russo One', sans-serif;*//
     width: 80vw;
     height: 60vh;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .question {
     display: flex;
     padding: 1rem;
+    font-family: 'Russo One', sans-serif;
     font-size: 2.5rem;
     flex-direction: column;
     align-content: flex-start;
@@ -165,12 +169,14 @@ font-family: 'Russo One', sans-serif;*//
     letter-spacing: 3px;
     text-decoration: none;
     font-size: var(--fs-size);
-    font-family: "Arial";
+    font-family: 'Russo One', sans-serif;
     position: relative;
     text-transform: uppercase;
     color: transparent;
     -webkit-text-stroke: 1px var(--text-stroke-color);
-  }
+    
+}
+
   /* this is the text, when you hover on button */
   .hover-text {
     cursor: pointer;
@@ -194,18 +200,19 @@ font-family: 'Russo One', sans-serif;*//
   .shake {
     cursor: pointer;
     height: 3em;
-    width: 8em;
+    width: 20em;
     border: none;
     border-radius: 10em;
-    background: #ffe600;
-    font-size: 17px;
+    background: #a7a7a7;
+    font-size: 1.5rem;
     color: #ffffff;
-    font-family: inherit;
-    font-weight: 500;
+    font-family: 'Russo One', sans-serif;
+    font-weight: 400;
+    box-shadow: 0 9px #999;
    }
    
    .shake:hover {
-    animation: shake3856 0.5s linear infinite both;
+    animation: shake3856 0.4s linear infinite both;
    }
    
    @keyframes shake3856 {
@@ -239,8 +246,14 @@ font-family: 'Russo One', sans-serif;*//
      transform: translate(0);
     }
    }
+   .shake:active {
+    background-color: #292929;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    }
    
    .input {
+    align-self: start;
     border: 3px solid rgb(236, 43, 43);
     border-radius: 20px;
     background-image: linear-gradient(120deg,#3c3c3c,#585858);
@@ -252,9 +265,59 @@ font-family: 'Russo One', sans-serif;*//
     transition: all 2s;
     max-width: 370px;
     width: 500%;
+    height: 200%;
     margin: 2rem;
    }
    
    .input:focus {
     outline-color: rgb(236, 43, 43);
    }
+
+   .card {
+    width: 150px;
+    height: 204px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.212);
+    background: #fff;
+    display: flex;
+    border-radius: 20px;
+    justify-content: center;
+    position: relative;
+    transition: all .4s;
+    text-align: center;
+    margin: 0.5rem;
+    align-items: center;
+}
+   
+   .card::before {
+    content: '---content---';
+    letter-spacing: 0.2em;
+    position: absolute;
+    bottom: 8px;
+    left: 20px;
+    color: rgb(51, 51, 51);
+    font-size: 0.8em;
+    font-weight: 700;
+   }
+   
+   .card div {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.212);
+    cursor: pointer;
+    z-index: 10;
+    transition: all .4s;
+    background-color: rgb(233, 13, 13);
+   }
+   
+   .card:hover div {
+    transform: translateY(-30px);
+   }
+
+   .center {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    }
