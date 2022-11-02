@@ -20,7 +20,7 @@ class CrazyGPs {
     play () {
         let gameBoard = document.querySelector("#gameBoard");
         let introPage = document.querySelector(".introPage");
-        let resultPage = document.querySelector(".resultPage");
+        let resultPage = document.querySelector("#resultPage");
 
         introPage.classList.add("hide");
         resultPage.classList.add("hide");
@@ -82,7 +82,7 @@ class CrazyGPs {
 
     endGame () {
         let gameBoard = document.querySelector("#gameBoard");
-        let resultPage = document.querySelector(".resultPage");
+        let resultPage = document.querySelector("#resultPage");
 
         gameBoard.classList.add("hide");
         

@@ -1,18 +1,21 @@
+//*font-family: 'Anton', sans-serif;
+font-family: 'Permanent Marker', cursive;
+font-family: 'Russo One', sans-serif;*//
+
 .heroTitle {
     display: flex;
-    font-family: 'Permanent Marker', cursive;
-    font-size: 6.5rem;
     justify-content: center;
     padding: 2rem;
     text-align: center;
+    width: 70%;
 }
 
 .introPage {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80vw;
-    height: 80vh;
+    width: 50%;
+    height: 70%;
     flex-wrap: wrap;
     flex-direction: column;
     padding: 2rem;
@@ -20,13 +23,14 @@
 
 .background {
     display: flex;
-    align-content: center;
+    flex-direction: column;
     justify-content: center;
-    background-image: url("Imgs/Techtalk2.png");
+    align-items: center;
+    background-image: url("Imgs/fundo.png");
     background-position: center;
-    background-size: 120vh;
+    background-size: 50%;
     background-color: black;
-    background-repeat: no-repeat;    
+    background-repeat: no-repeat;
 }
 
 .inputName {
@@ -101,27 +105,40 @@
 }
 
 .hide {
-    display: none;
+    display: none !important;
 }
 
 .bottomPage{
     display: flex;
 }
 
+#resultPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 80vh;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 2rem;
+}
+
 #won {
     font-family: 'Permanent Marker', cursive;
-    font-size: 6.5rem;
+    font-size: 4.5rem;
     justify-content: center;
     padding: 2rem;
     text-align: center;
+    color: white;
 }
 
 #lose {
     font-family: 'Permanent Marker', cursive;
-    font-size: 6.5rem;
+    font-size: 4.5rem;
     justify-content: center;
     padding: 2rem;
     text-align: center;
+    color: white;
 }
 
 .result {
@@ -131,3 +148,113 @@
     padding: 2rem;
     text-align: center;
 }
+/* === removing default button style ===*/
+.button {
+    margin: 0;
+    background: transparent;
+    padding: 0;
+    border: none;
+  }
+  
+  /* button styling */
+  .button {
+    --border-right: 6px;
+    --text-stroke-color: rgba(255,255,255,0.6);
+    --animation-color: #37FF8B;
+    --fs-size: 3em;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+  }
+  /* this is the text, when you hover on button */
+  .hover-text {
+    cursor: pointer;
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+  }
+  /* hover */
+  .button:hover .hover-text {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--animation-color))
+  }
+
+  .shake {
+    cursor: pointer;
+    height: 3em;
+    width: 8em;
+    border: none;
+    border-radius: 10em;
+    background: #ffe600;
+    font-size: 17px;
+    color: #ffffff;
+    font-family: inherit;
+    font-weight: 500;
+   }
+   
+   .shake:hover {
+    animation: shake3856 0.5s linear infinite both;
+   }
+   
+   @keyframes shake3856 {
+    0% {
+     -webkit-transform: translate(0);
+     transform: translate(0);
+    }
+   
+    20% {
+     -webkit-transform: translate(-2px, 2px);
+     transform: translate(-2px, 2px);
+    }
+   
+    40% {
+     -webkit-transform: translate(-2px, -2px);
+     transform: translate(-2px, -2px);
+    }
+   
+    60% {
+     -webkit-transform: translate(2px, 2px);
+     transform: translate(2px, 2px);
+    }
+   
+    80% {
+     -webkit-transform: translate(2px, -2px);
+     transform: translate(2px, -2px);
+    }
+   
+    100% {
+     -webkit-transform: translate(0);
+     transform: translate(0);
+    }
+   }
+   
+   .input {
+    border: 3px solid rgb(236, 43, 43);
+    border-radius: 20px;
+    background-image: linear-gradient(120deg,#3c3c3c,#585858);
+    color: rgb(236, 43, 43);
+    cursor: pointer;
+    padding: 7px 12px;
+    font-family: 'Russo One', sans-serif;
+    font-size: 17px;
+    transition: all 2s;
+    max-width: 370px;
+    width: 500%;
+    margin: 2rem;
+   }
+   
+   .input:focus {
+    outline-color: rgb(236, 43, 43);
+   }

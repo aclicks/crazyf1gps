@@ -7,14 +7,19 @@
     <link rel="stylesheet" href="./Style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Permanent+Marker&family=Russo+One&display=swap" rel="stylesheet">
 </head>
 <body class="background">
     <div class="introPage">
-        <div class="heroTitle"></div>
-        <div><input type="text" placeholder="Insert your name" class="inputName" autofocus></div>
+        <div class="heroTitle"><img src="./Imgs/text.png" alt="Craziest Formula 1 GPs"></div>
+        <div><input type="text" name="text" class="input" placeholder="Insert your name" autofocus></div>
         <div>
-            <div><button type="button" class="playBtn">Start!</button></div>
+            <div><button data-text="Awesome" class="button playBtn">
+                <span class="actual-text">&nbsp;Play!&nbsp;</span>
+                <span class="hover-text" aria-hidden="true">&nbsp;Play!&nbsp;</span>
+            </button></div>
         </div>
     </div>
     <div class="hide" id="gameBoard">
@@ -24,11 +29,11 @@
         <div class="middleQPage">
             <div class="question">
                 <div class="question1"></div>
-                <button class="answer"></button>
-                <button class="answer"></button>
-                <button class="answer"></button>
-                <button class="answer"></button>
-                <button class="answer"></button>
+                <button class="answer shake"></button>
+                <button class="answer shake"></button>
+                <button class="answer shake"></button>
+                <button class="answer shake"></button>
+                <button class="answer shake"></button>
             </div>
             <div class="tips">
                 <button class="card"></button>
@@ -41,9 +46,9 @@
             <div class="timer"></div>  
         </div>
     </div>
-    <div class="resultPage hide">
-        <div class="hide" id="won">Congrat</div>
-        <div class="hide" id="lose">Lose</div>
+    <div class="hide" id="resultPage">
+        <div class="hide" id="won">You won! Was Briatore your team principal?</div>
+        <div class="hide" id="lose">You were lapped by Latifi!</div>
     </div>
     <script src="./Index.js"></script>
     <script src="./exec.js"></script>
