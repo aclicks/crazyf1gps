@@ -22,7 +22,11 @@
     display: flex;
     align-content: center;
     justify-content: center;
-    
+    background-image: url("Imgs/Techtalk2.png");
+    background-position: center;
+    background-size: 120vh;
+    background-color: black;
+    background-repeat: no-repeat;    
 }
 
 .inputName {
@@ -47,11 +51,12 @@
     display: flex;
     justify-content: flex-end;
     width: 80vw;
-    height: 5vh;
-    align-content: center;
+    height: 30vh;
+    align-content: flex-end;
     flex-wrap: wrap;
     font-size: 1.5rem;
     padding: 1rem;
+    color: white;
 }
 
 .middleQPage {
@@ -70,6 +75,7 @@
     justify-content: center;
     align-items: flex-start;
     width: 40vw;
+    color: white;
 }
 
 .answer {
