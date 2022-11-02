@@ -55,13 +55,14 @@ font-family: 'Russo One', sans-serif;*/
     display: flex;
     justify-content: flex-end;
     width: 80vw;
-    height: 10vh;
+    height: 7vh;
     align-content: flex-end;
     flex-wrap: wrap;
     font-size: 1.5rem;
-    padding: 1rem;
+    padding: 2rem;
     color: white;
     font-family: 'Russo One', sans-serif;
+    min-width: 400px;
 }
 
 .middleQPage {
@@ -71,6 +72,7 @@ font-family: 'Russo One', sans-serif;*/
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    min-width: 700px;
 }
 
 .question {
@@ -84,6 +86,7 @@ font-family: 'Russo One', sans-serif;*/
     align-items: flex-start;
     width: 40vw;
     color: white;
+    min-width: 350px;
 }
 
 .answer {
@@ -91,6 +94,7 @@ font-family: 'Russo One', sans-serif;*/
     width: 35vw;
     margin: 1vw;
     font-size: 1.5rem;
+    min-width: 300px;
 }
 
 .tips {
@@ -100,7 +104,9 @@ font-family: 'Russo One', sans-serif;*/
     justify-content: center;
     align-content: center;
     align-items: center;
-    width: 35vw;
+    width: 40vw;
+    margin: 1vw;
+    min-width: 300px;
 }
 
 .card {
@@ -141,7 +147,6 @@ font-family: 'Russo One', sans-serif;*/
 #lose {
     font-family: 'Permanent Marker', cursive;
     font-size: 4.5rem;
-    font-style:
     justify-content: center;
     padding: 2rem;
     text-align: center;
@@ -204,7 +209,7 @@ font-family: 'Russo One', sans-serif;*/
   .shake {
     cursor: pointer;
     height: 3em;
-    width: 15em;
+    width: 12em;
     border: none;
     border-radius: 10em;
     background: #a7a7a7;
@@ -277,8 +282,8 @@ font-family: 'Russo One', sans-serif;*/
    }
 
    .card {
-    width: 150px;
-    height: 204px;
+    width: 15vw;
+    height: 20vw;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.212);
     background: #fff;
     display: flex;
