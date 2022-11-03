@@ -18,7 +18,7 @@ class CrazyGPs {
         { questionEasy: "Who won the 2020 Italy GP?",
         answers: ["Esteban Ocon", "Lewis Hamilton", "Lance Stroll", "Pierre Gasly", "Carlos Sainz"],
         correctAnswer: "Pierre Gasly",
-        tips: ["Lewis Hamilton got a penalty", "Was a RedBull driver", "Daniel Riccardo loves him", "Is french"]},
+        tips: ["Lewis Hamilton got a penalty", "Was a RedBull driver", "Daniel Riccardo loves him", "Is French"]},
         { questionEasy: "Who won the 2021 Italy GP?",
         answers: ["Esteban Ocon", "Daniel Riccardo", "Lando Norris", "Pierre Gasly", "Carlos Sainz"],
         correctAnswer: "Daniel Riccardo",
@@ -27,10 +27,10 @@ class CrazyGPs {
         answers: ["Daniil Kvyat", "Sebastian Vettel", "Romain Grosjean", "Robert Kubica", "Max Verstappen"],
         correctAnswer: "Max Verstappen",
         tips: ["Rainy race", "Mercedes did 10 pitstops", "Redbull Driver", "Orange"]},
-        { questionEasy: "Who won the 2019 Germany GP?",
-        answers: ["Daniil Kvyat", "Sebastian Vettel", "Romain Grosjean", "Robert Kubica", "Max Verstappen"],
-        correctAnswer: "Max Verstappen",
-        tips: ["Rainy race", "Mercedes did 10 pitstops", "Redbull Driver", "Orange"]},
+        { questionEasy: "Who won the 2020 Sahkir GP?",
+        answers: ["Valteri Bottas", "Jack Aitken", "Lance Stroll", "Sergio Perez", "George Russell"],
+        correctAnswer: "Sergio Perez",
+        tips: ["Russel was driving for Mercedes", "Fittipaldi was driving for Haas", "Pink car", "Dia de los muertos"]},
  ];
     this.result = 0;
     this.round = 0;
@@ -44,6 +44,9 @@ class CrazyGPs {
         introPage.classList.add("hide");
         resultPage.classList.add("hide");
         gameBoard.classList.remove("hide");
+        this.questions.sort(() => {
+            return Math.random() - 0.5;
+        })
     }
 
     showQuestion () {
@@ -54,19 +57,26 @@ class CrazyGPs {
             e1.innerText = this.questions[this.round].answers[i];
             e1.addEventListener("click", e => this.checkAnswer(e1.innerText));
         })
-       
+        const tips = document.querySelectorAll(".tip");
+        tips.forEach ((e1, i) => {
+            e1.innerText = this.questions[this.round].tips[i];
+        })
+        const cards = document.querySelectorAll(".card");
+        cards.forEach (e1 => {
+            e1.addEventListener("click", e => this.showTips(e1.id));
+        })
     }
 
     checkAnswer (textToCheck) {
         let timeout;
         if (this.questions[this.round].correctAnswer === textToCheck) {
-            timeout = setTimeout(e => this.checkStatus(), 1000);
+            timeout = setTimeout(e => this.checkStatus(), 1500);
         }
         else {
             this.score -= 10;
             let remain = document.querySelector(".score")
             remain.innerText = this.score+" points left";
-            timeout = setTimeout(e => this.checkStatus(), 1000);
+            timeout = setTimeout(e => this.checkStatus(), 1500);
         }
         let btnColors = document.querySelectorAll(".shake")
         btnColors.forEach (e1 => {
@@ -76,12 +86,8 @@ class CrazyGPs {
             else {
                 e1.style.background = "red";
             }
-            setTimeout(e => e1.style.background = "#a7a7a7", 1000)
+            setTimeout(e => e1.style.background = "#a7a7a7", 1500)
         })
-
-
-
-
     }
 
     checkStatus () {
@@ -98,23 +104,32 @@ class CrazyGPs {
         }
     }
 
-    showTips () {
-        //mostrar dicas
+    showTips (id) {
+        let hide = document.getElementById(id)
+        hide.classList.add("hide")
+        hide.nextElementSibling.classList.remove("hide")
     }
 
     nextQuestion () {
         this.round += 1;
         
+        let hide = document.querySelectorAll(".tip")
+        hide.forEach(e1 => {
+            e1.classList.add("hide")
+            e1.previousElementSibling.classList.remove("hide")
+        })
+
         const question = document.querySelector(".question1");
         question.innerText = this.questions[this.round].questionEasy;
         const button = document.querySelectorAll(".answer");
         button.forEach ((e1, i) => {
             e1.innerText = this.questions[this.round].answers[i];
         })
-        const tips = document.querySelectorAll(".tips");
-        this.forEach ((e1, i) => {
+        const tips = document.querySelectorAll(".tip");
+        tips.forEach ((e1, i) => {
             e1.innerText = this.questions[this.round].tips[i];
         })
+        
 
     }
 
@@ -140,6 +155,7 @@ class CrazyGPs {
             won.innerText = `${this.name}, you won! Was Briatore your team principal?`
         }
     }
+   
 
 }
 

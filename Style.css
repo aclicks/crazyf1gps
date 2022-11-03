@@ -107,12 +107,32 @@ font-family: 'Russo One', sans-serif;*/
     width: 40vw;
     margin: 1vw;
     min-width: 300px;
+    max-height: 500px;
+}
+
+.tip {
+    display: flex;
+    padding: 1rem;
+    font-family: 'Russo One', sans-serif;
+    font-size: 1rem;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: center;
+    color: #ffffff;
 }
 
 .card {
-    width: 15vw;
-    height: 15vh;
+    width: 90px;
+    height: 154px;
+    border-radius: 30px;
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+             -15px -15px 30px rgb(60, 60, 60);
 }
+
+.card:hover {
+    transform: scale(1.03);
+  }
 
 .hide {
     display: none !important;
@@ -148,6 +168,7 @@ font-family: 'Russo One', sans-serif;*/
     font-family: 'Permanent Marker', cursive;
     font-size: 4.5rem;
     justify-content: center;
+    text-shadow: 2px 5px 5px black;
     padding: 2rem;
     text-align: center;
     color: white;
@@ -285,7 +306,7 @@ font-family: 'Russo One', sans-serif;*/
     width: 14vw;
     height: 20vw;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.212);
-    background: #fff;
+    
     display: flex;
     border-radius: 20px;
     justify-content: center;
@@ -315,6 +336,6 @@ font-family: 'Russo One', sans-serif;*/
     
     input:required:invalid {
         border-color: #c00000;
-      }
+    }
 
     
