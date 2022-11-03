@@ -740,3 +740,47 @@ font-family: 'Russo One', sans-serif;*/
                 padding-left: 1rem;
             }
         }
+        @media all and (min-width:2000px) and (max-width:5200px){
+            .tips {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: center;
+                align-content: center;
+                align-items: center;
+                width: 80vw;
+                heitgh: 80vh;
+                margin: 1vh;
+                min-width: 10px;
+                max-height: 900px;
+            }
+            
+            .tip {
+                display: flex;
+                padding: 1rem;
+                font-family: 'Russo One', sans-serif;
+                font-size: 1rem;
+                flex-direction: column;
+                align-content: flex-start;
+                justify-content: center;
+                color: #ffffff;
+                
+            }
+            .card {
+                width: 12vw;
+                height: 18vw;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.212);
+                display: flex;
+                border-radius: 20px;
+                justify-content: center;
+                position: relative;
+                transition: all .4s;
+                text-align: center;
+                margin: 0.5rem;
+                align-items: center;
+                
+                resize: inherit;
+            }
+        
+        
+        }
