@@ -88,10 +88,10 @@ class CrazyGPs {
         let btnColors = document.querySelectorAll(".shake")
         btnColors.forEach (e1 => {
             if (e1.innerText === this.questions[this.round].correctAnswer){
-                e1.style.background = "green";
+                e1.style.background = "limegreen";
             }
             else {
-                e1.style.background = "red"; 
+                e1.style.background = "crimson"; 
             }
             setTimeout(e => e1.style.background = "#a7a7a7", 1500)
         })
@@ -113,8 +113,8 @@ class CrazyGPs {
 
     showTips (id) {
         let hide = document.getElementById(id)
-        hide.classList.add("hide")
-        hide.nextElementSibling.classList.remove("hide")
+        hide.classList.add("hide");
+        hide.nextElementSibling.classList.remove("hide");
         this.discount += 1;
         this.score -= this.discount
         let remain = document.querySelector(".score")
@@ -165,7 +165,8 @@ class CrazyGPs {
             let won = document.querySelector("#won");
             won.classList.remove("hide");
             bg.style.backgroundImage = "url('Imgs/won.png')";
-            won.innerText = `${this.name}, you won! Was Briatore your team principal?`
+            bg.classList.add(".heroTitle");
+            won.innerText = `${this.name}, you won! Was Briatore your team principal?`;
             this.wonAudio.play();
         }
     }

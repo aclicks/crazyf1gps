@@ -14,23 +14,36 @@ font-family: 'Russo One', sans-serif;*/
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70%;
-    height: 70%;
+    width: 90%;
+    height: 90%;
     flex-wrap: wrap;
     flex-direction: column;
     padding: 2rem;
 }
 
+.gameboard {
+    display: flex;
+    width: 90vw;
+    height: 90vh;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .background {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-image: url("Imgs/fundo.png");
+    background-image: url(Imgs/fundo.png);
     background-position: center;
     background-size: 100%;
     background-color: black;
     background-repeat: no-repeat;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
 .inputName {
@@ -53,32 +66,21 @@ font-family: 'Russo One', sans-serif;*/
 
 .topQPage {
     display: flex;
-    justify-content: flex-end;
-    width: 80vw;
-    height: 7vh;
-    align-content: flex-end;
-    flex-wrap: wrap;
-    font-size: 2vw;
-    padding: 2rem;
-    color: white;
+    width: 90vw;
+    height: 5vh;
+    color: crimson;
     font-family: 'Russo One', sans-serif;
-    min-width: 100px;
-    resize: inherit;
 }
 
 .score {
     display: flex;
+    width: 85vw;
     justify-content: flex-end;
-    width: 50vw;
-    height: 7vh;
     align-content: flex-end;
     flex-wrap: wrap;
-    font-size: 2.2vw;
-    padding: 2rem;
-    color: white;
+    font-size: 2vw;
+    color: crimson;
     font-family: 'Russo One', sans-serif;
-    min-width: 100px;
-    resize: inherit;
 }
 
 .middleQPage {
@@ -88,7 +90,6 @@ font-family: 'Russo One', sans-serif;*/
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    min-width: 700px;
 }
 
 .question {
@@ -102,13 +103,17 @@ font-family: 'Russo One', sans-serif;*/
     align-items: flex-start;
     width: 40vw;
     color: white;
-    }
+    align-items: center;
+}
+
+.question1{
+    display: flex;
+}
 
 .answer {
     padding: 1rem;
     width: 35vw;
     margin: 1vw;
-    font-size: 1.5rem;
 }
 
 .tips {
@@ -120,32 +125,18 @@ font-family: 'Russo One', sans-serif;*/
     align-items: center;
     width: 40vw;
     margin: 1vw;
-
-    min-width: 200px;
-    max-height: 500px;
 }
 
 .tip {
     display: flex;
     padding: 1rem;
     font-family: 'Russo One', sans-serif;
-    font-size: 1rem;
+    font-size: 2vw;
     flex-direction: column;
     align-content: flex-start;
     justify-content: center;
     color: #ffffff;
-}
-
-.card {
-    border-radius: 30px;
-    background: #212121;
-    box-shadow: 15px 15px 30px rgb(25, 25, 25),
-             -15px -15px 30px rgb(60, 60, 60);
-    width: 10vw;
-    height: 10vh;
-    resize: inherit;
-    max-height: 300px;
-    max-width: 200px
+    
 }
 
 .card:hover {
@@ -251,10 +242,9 @@ font-family: 'Russo One', sans-serif;*/
     border: none;
     border-radius: 10em;
     background: #a7a7a7;
-    font-size: 1.5rem;
+    font-size: 2vw;
     color: #ffffff;
     font-family: 'Russo One', sans-serif;
-    font-weight: 400;
     box-shadow: 0 9px #999;
    }
    
@@ -307,7 +297,7 @@ font-family: 'Russo One', sans-serif;*/
     cursor: pointer;
     padding: 7px 12px;
     font-family: 'Russo One', sans-serif;
-    font-size: 17px;
+    font-size: 2vw;
     transition: all 2s;
     max-width: 370px;
     width: 500%;
@@ -332,6 +322,7 @@ font-family: 'Russo One', sans-serif;*/
     text-align: center;
     margin: 0.5rem;
     align-items: center;
+    background-color: #3c3c3c;
 }
    
     .center {
@@ -356,11 +347,11 @@ font-family: 'Russo One', sans-serif;*/
     }
     
     .rules {
-        margin-top: 5em;
+        margin-top: 2vh;
         display: flex;
         font-family: 'Russo One', sans-serif;
         color: rgb(0, 0, 0);
-        font-size: 1em;
+        font-size: 2vw;
         flex-direction: column;
         align-content: center;
         align-items: center;
@@ -383,3 +374,368 @@ font-family: 'Russo One', sans-serif;*/
         text-justify: auto;
         padding-left: 1rem;
     }
+    @media all and (min-width:320px) and (max-width:800px){
+        .heroTitle {
+            display: flex;
+            width: 100%;
+        }
+        
+        .introPage {
+            display: flex;
+            height: 90vh;
+            flex-direction: column;
+            align-content: center;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+        
+        .background {
+            display: flex;
+            background-image: url("Imgs/fundo.png");
+            background-position-y: bottom;
+        }
+        
+        .inputName {
+            display: flex;
+            font-size: 2.5rem;
+            margin: 1rem;
+        }
+        
+        .playBtn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        .qPage {
+            display: none;
+        }
+        .gameboard {
+            display: flex;
+            width: 90vw;
+            height: 90vh;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+        }
+        .topQPage {
+            display: flex;
+            justify-content: center;
+            width: 90vw;
+            height: 8vh;
+            align-content: flex-end;
+            flex-wrap: wrap;
+            font-family: 'Russo One', sans-serif;
+            min-width: 0px;
+            padding: 0rem;
+            
+        }
+        
+        .score {
+            width: 90vw;
+            height: 4vh;
+            display: flex;
+            color: crimson;
+            font-family: 'Russo One', sans-serif;
+            padding: 0rem;
+            font-size: 2vh;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+        
+        .middleQPage {
+            display: flex;
+            width: 90vw;
+            height: 90vh;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .question {
+            display: flex;
+            padding: 1rem;
+            font-family: 'Russo One', sans-serif;
+            font-size: 1rem;
+            flex-direction: column;
+            align-content: flex-start;
+            justify-content: center;
+            align-items: center;
+            width: 30vw;
+            color: white;
+        }
+        .question1{
+            display: flex;
+            width: 90vw;
+            justify-content: center;
+            margin-bottom: 2vh;
+            font-size: 3.5vh;
+            text-align: center;
+        }
+        
+        .answer {
+            padding: 0rem;
+            width: 20vw;
+            margin: 1vw;
+        }
+        
+        .tips {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            width: 90vw;
+            margin: 1vw;
+            background-color: #3c3c3c;
+            min-width: 10px;
+            max-height: 1000px;
+        }
+        
+        .tip {
+            display: flex;
+            padding: 1rem;
+            font-family: 'Russo One', sans-serif;
+            font-size: 1rem;
+            flex-direction: column;
+            align-content: flex-start;
+            justify-content: center;
+            color: #ffffff;
+            background-color: #3c3c3c;
+        }
+                   
+        .card:hover {
+            transform: scale(1.03);
+          }
+        
+        .hide {
+            display: none !important;
+        }
+        
+        .bottomPage{
+            display: flex;
+        }
+        
+        #resultPage {
+            display: flex;
+            align-items: center;
+            width: 90vw;
+            height: 90vh;
+            flex-direction: column;
+            padding: 2rem;
+            align-content: center;
+        }
+        
+        #won {
+            display: flex;
+            font-family: 'Permanent Marker', cursive;
+            font-size: 4rem;
+            width: 90vw;
+            justify-content: flex-end;
+            padding: 2rem;
+            text-align: center;
+            color: white;
+        }
+        
+        #lose {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 4rem;
+            width: 90vw;
+            justify-content: center;
+            text-shadow: 2px 5px 5px black;
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            padding-bottom: 20rem;
+        }
+        
+        /* === removing default button style ===*/
+        .button {
+            margin: 0;
+            background: transparent;
+            padding: 0;
+            border: none;
+          }
+          
+          /* button styling */
+          .button {
+            --border-right: 6px;
+            --text-stroke-color: rgba(255,255,255,0.6);
+            --animation-color: #37FF8B;
+            --fs-size: 3em;
+            letter-spacing: 3px;
+            text-decoration: none;
+            font-size: var(--fs-size);
+            font-family: 'Russo One', sans-serif;
+            position: relative;
+            text-transform: uppercase;
+            color: transparent;
+            -webkit-text-stroke: 1px var(--text-stroke-color);
+            
+        }
+        
+          /* this is the text, when you hover on button */
+          .hover-text {
+            cursor: pointer;
+            position: absolute;
+            box-sizing: border-box;
+            content: attr(data-text);
+            color: var(--animation-color);
+            width: 0%;
+            inset: 0;
+            border-right: var(--border-right) solid var(--animation-color);
+            overflow: hidden;
+            transition: 0.5s;
+            -webkit-text-stroke: 1px var(--animation-color);
+          }
+          /* hover */
+          .button:hover .hover-text {
+            width: 100%;
+            filter: drop-shadow(0 0 23px var(--animation-color))
+          }
+        
+          .shake {
+            cursor: pointer;
+            height: 3em;
+            width: 150%;
+            border: none;
+            border-radius: 1em;
+            background: #a7a7a7;
+            font-size: 1rem;
+            color: #ffffff;
+            font-family: 'Russo One', sans-serif;
+            box-shadow: 0 6px #999;
+           }
+           
+           .shake:hover {
+            animation: shake3856 0.4s linear infinite both;
+           }
+           
+           @keyframes shake3856 {
+            0% {
+             -webkit-transform: translate(0);
+             transform: translate(0);
+            }
+           
+            20% {
+             -webkit-transform: translate(-2px, 2px);
+             transform: translate(-2px, 2px);
+            }
+           
+            40% {
+             -webkit-transform: translate(-2px, -2px);
+             transform: translate(-2px, -2px);
+            }
+           
+            60% {
+             -webkit-transform: translate(2px, 2px);
+             transform: translate(2px, 2px);
+            }
+           
+            80% {
+             -webkit-transform: translate(2px, -2px);
+             transform: translate(2px, -2px);
+            }
+           
+            100% {
+             -webkit-transform: translate(0);
+             transform: translate(0);
+            }
+           }
+           .shake:active {
+            background-color: #292929;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+            }
+           
+           .input {
+            border: 3px solid rgb(236, 43, 43);
+            border-radius: 20px;
+            background-image: linear-gradient(120deg,#3c3c3c,#585858);
+            color: rgb(236, 43, 43);
+            cursor: pointer;
+            padding: 7px 12px;
+            font-family: 'Russo One', sans-serif;
+            font-size: 17px;
+            transition: all 2s;
+            height: 3vh;
+            max-width: 200px;
+            margin: 1rem;
+           }
+           
+           .input:focus {
+            outline-color: rgb(236, 43, 43);
+           }
+        
+           .card {
+            width: 24vw;
+            height: 35vw;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.212);
+            display: flex;
+            border-radius: 20px;
+            justify-content: center;
+            position: relative;
+            transition: all .4s;
+            text-align: center;
+            margin: 0.5rem;
+            align-items: center;
+            background: #212121;
+            resize: inherit;
+        }
+           
+            .center {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            font-size: 2rem;
+            }
+        
+            #btnControl {
+                display: none;
+            }
+            
+            #btnControl:checked + label > img {
+                width: 70px;
+                height: 74px;
+            }
+            
+            input:required:invalid {
+                border-color: #c00000;
+            }
+            
+            .rules {
+                margin-top: 1em;
+                display: flex;
+                font-family: 'Russo One', sans-serif;
+                color: rgb(0, 0, 0);
+                font-size: 1em;
+                flex-direction: column;
+                align-content: center;
+                align-items: center;
+                padding: 0.3rem;
+                border-radius: 50px;
+                background: #e0e0e0;opacity:0.7;
+                box-shadow: inset 10px 10px 30px #bebebe,
+                            inset -10px -10px 30px #ffffff;
+                flex-wrap: wrap;
+                justify-content: center;
+                text-justify: auto;
+                
+            }
+        
+            .title {
+                text-justify: auto;
+            }
+            
+            .text {
+                text-justify: auto;
+                padding-left: 1rem;
+            }
+        }
