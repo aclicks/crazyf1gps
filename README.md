@@ -17,5 +17,5 @@ The code permits to alter the number of questions also.
 
 This theme was choosen to entertain F1 spectators with some jokes and knowledge.
 
-##Link to Game
+Link to Game
 https://aclicks.github.io/crazyf1gps/
