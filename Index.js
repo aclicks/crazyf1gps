@@ -35,10 +35,10 @@ class CrazyGPs {
     this.result = 0;
     this.round = 0;
     this.discount = 0;
-    this.wonAudio = new Audio("./sounds/won1.mp3");
-    this.loseAudio = new Audio("./sounds/lose1.mp3");
-    this.missAudio = new Audio("./sounds/stupid.mp3");
-    this.driveByAudio = new Audio("./sounds/driveby.mp3")
+    this.wonAudio = new Audio("./Sounds/won1.mp3");
+    this.loseAudio = new Audio("./Sounds/lose1.mp3");
+    this.missAudio = new Audio("./Sounds/stupid.mp3");
+    this.driveByAudio = new Audio("./Sounds/driveby.mp3")
     }
 
     play () {
