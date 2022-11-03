@@ -98,7 +98,7 @@ class CrazyGPs {
     }
 
     checkStatus () {
-        if (this.score === 0){
+        if (this.score <= 0){
             let remain = document.querySelector(".score")
             remain.innerText = this.score+" points left in your Superlicense";
             this.endGame();
@@ -154,7 +154,7 @@ class CrazyGPs {
         resultPage.classList.remove("hide");
         let bg = document.querySelector(".background");
 
-        if (this.score === 0){
+        if (this.score <= 0){
             let lose = document.querySelector("#lose");
             lose.classList.remove("hide");
             bg.style.backgroundImage = "url('Imgs/lose.jpg')";
