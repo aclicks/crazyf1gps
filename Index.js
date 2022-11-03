@@ -1,7 +1,7 @@
 class CrazyGPs {
  constructor () {
     this.name = "";
-    this.score = 30;
+    this.score = 25;
     this.questions = [
         { questionEasy: "Who won the 2008 Singapore GP?",
         answers: ["Felipe Massa", "Lewis Hamilton", "Kimi Räikkönen", "Robert Kubica", "Fernando Alonso"],
@@ -34,6 +34,11 @@ class CrazyGPs {
  ];
     this.result = 0;
     this.round = 0;
+    this.discount = 0;
+    this.wonAudio = new Audio("./sounds/won1.mp3");
+    this.loseAudio = new Audio("./sounds/lose1.mp3");
+    this.missAudio = new Audio("./sounds/stupid.mp3");
+    this.driveByAudio = new Audio("./sounds/driveby.mp3")
     }
 
     play () {
@@ -71,12 +76,14 @@ class CrazyGPs {
         let timeout;
         if (this.questions[this.round].correctAnswer === textToCheck) {
             timeout = setTimeout(e => this.checkStatus(), 1500);
+            this.driveByAudio.play();
         }
         else {
             this.score -= 10;
             let remain = document.querySelector(".score")
-            remain.innerText = this.score+" points left";
+            remain.innerText = this.score+" points left in your Superlicense";
             timeout = setTimeout(e => this.checkStatus(), 1500);
+            this.missAudio.play();
         }
         let btnColors = document.querySelectorAll(".shake")
         btnColors.forEach (e1 => {
@@ -84,7 +91,7 @@ class CrazyGPs {
                 e1.style.background = "green";
             }
             else {
-                e1.style.background = "red";
+                e1.style.background = "red"; 
             }
             setTimeout(e => e1.style.background = "#a7a7a7", 1500)
         })
@@ -93,7 +100,7 @@ class CrazyGPs {
     checkStatus () {
         if (this.score === 0){
             let remain = document.querySelector(".score")
-            remain.innerText = this.score+" points left";
+            remain.innerText = this.score+" points left in your Superlicense";
             this.endGame();
         }
         else {
@@ -108,10 +115,15 @@ class CrazyGPs {
         let hide = document.getElementById(id)
         hide.classList.add("hide")
         hide.nextElementSibling.classList.remove("hide")
+        this.discount += 1;
+        this.score -= this.discount
+        let remain = document.querySelector(".score")
+        remain.innerText = this.score+" points left in your Superlicense";
     }
 
     nextQuestion () {
         this.round += 1;
+        this.discount = 0;
         
         let hide = document.querySelectorAll(".tip")
         hide.forEach(e1 => {
@@ -147,12 +159,14 @@ class CrazyGPs {
             lose.classList.remove("hide");
             bg.style.backgroundImage = "url('Imgs/lose.jpg')";
             lose.innerText = `${this.name}, you were lapped by Latifi! And it was raining!`
+            this.loseAudio.play();
         }
         else{
             let won = document.querySelector("#won");
             won.classList.remove("hide");
             bg.style.backgroundImage = "url('Imgs/won.png')";
             won.innerText = `${this.name}, you won! Was Briatore your team principal?`
+            this.wonAudio.play();
         }
     }
    

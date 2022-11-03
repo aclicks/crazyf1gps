@@ -13,16 +13,25 @@
 </head>
 <body class="background">
     <div class="introPage">
-        <div class="heroTitle"><img src=./Imgs/text.png alt="Craziest Formula 1 GPs"></div>
+        <div class="heroTitle"><img class= "heroTitle" src=./Imgs/text.png alt="Craziest Formula 1 GPs"></div>
         <input type="text" name="text" class="input" placeholder="Insert your name" required autofocus>
             <button data-text="Awesome" class="button playBtn">
                 <span class="actual-text">&nbsp;Play!&nbsp;</span>
                 <span class="hover-text" aria-hidden="true">&nbsp;Play!&nbsp;</span>
             </button>
+            <div class="rules">
+                    <p class="title">How to play</p>
+                    <p class="text">Your objective is to end the game without losing all your points.
+                    If you answer correctly you advance to the next question.
+                    If you answer incorrectly you lose 10 points and advance.
+                    <p class="text">You have 4 FIA helps to use, each one makes you lose more points.
+                    First help you lose 1 point, second 2 points, third 3 points and fourth 4 points.
+                    You start with 25 points in your Superlicense and have 3 questions randomly picked to answer.</p>
+            </div>
     </div>
     <div class="hide" id="gameBoard">
         <div class="topQPage">
-            <div class="score"> 30 <span>points left</span></div>
+            <div class="score"> 25 points left in your Superlicense</div>
         </div>
         <div class="middleQPage">
             <div class="question">
